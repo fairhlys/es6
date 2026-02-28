@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let PageHandle = {
+        id: '123',
+        init: function () {
+            document.addEventListener('click', (e) => {
+                this.doSomeThings(e.type)
+            });
+        },
+        doSomeThings: function (type) {
+            console.log('Handling ' + type + ' for ' + this.id);
+        }
+
+    }
+    PageHandle.init()
+</script>
+
+</html>
