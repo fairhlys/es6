@@ -41,7 +41,7 @@ for (const [key, value] of myObj) {
     console.log(key, value);
 }
 
-//总的来说，对于迭代器，我们可以通过定义一个生成器函数来创建一个迭代器对象，并将其赋值给对象的Symbol.iterator属性，使得该对象成为一个可迭代对象。每次调用迭代器的next()方法时，生成器函数会执行到下一个yield表达式，并返回一个包含当前元素的值和是否已经遍历完成的对象。当迭代器遍历完成后，value属性将为undefined，done属性将为true。不过这个不是for of的做法，这就是用生成器来实现迭代器的做法，for of的做法是直接调用对象的[Symbol.iterator]()方法获取迭代器对象，然后反复调用next()方法，直到done为true。
+//总的来说，对于迭代器，我们可以通过定义一个生成器函数来创建一个迭代器，而迭代器本身是一个函数，并将其赋值给对象的Symbol.iterator属性，使得该对象成为一个可迭代对象。每次调用迭代器的next()方法时，生成器函数会执行到下一个yield表达式，并返回一个包含当前元素的值和是否已经遍历完成的对象。当迭代器遍历完成后，value属性将为undefined，done属性将为true。不过这个不是for of的做法，这就是用生成器来实现迭代器的做法，for of的做法是直接调用对象的[Symbol.iterator]()方法获取迭代器对象，然后反复调用next()方法，直到done为true。
 // for…of 的本质就是调用对象的[Symbol.iterator]() 获取迭代器，然后反复调用.next()，直到 done 为 true
 
 function* generator3() {
